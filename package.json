@@ -1,0 +1,24 @@
+{
+  "name": "calbot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "p21nc3 <pp4768@srmist.edu.in>",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p21nc3/calbot.git"
+  },
+  "scripts": {
+    "start": "./bin/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "pino": "^8.15.0",
+    "pino-http": "^8.4.0",
+    "pino-pretty": "^10.2.0"
+  }
+}
