@@ -15,10 +15,10 @@ if (fs.existsSync('history.json')) {
 app.get('/', (req, res) => {
   // Send a list of the available endpoints as HTML.
   res.send(`
-  <h1>Welcome to CalBot</h1>
-  <h3>Available endpoints</h3>
+  <h1 style="text-align: center;">Welcome to CALBot</h1>
+  <h3 style="text-align: center;">Available endpoints</h3>
   <head>
-    <title>Operator and Example Table</title>
+      <title style="text-align: center;">Operator and Example Table</title>
     <style>
         table {
             border-collapse: collapse;
@@ -45,49 +45,46 @@ app.get('/', (req, res) => {
         </tr>
         <tr>
             <td>plus</td>
-            <td>2 + 3</td>
+            <td>2/plus/3</td>
         </tr>
         <tr>
             <td>minus</td>
-            <td>5 - 2</td>
+            <td>5/minus/2</td>
         </tr>
         <tr>
             <td>into</td>
-            <td>4 * 6</td>
+            <td>4/into/6</td>
         </tr>
         <tr>
             <td>by</td>
-            <td>10 / 2</td>
+            <td>10/by/2</td>
         </tr>
         <tr>
             <td>power</td>
-            <td>2 ^ 3</td>
+            <td>2/power/3</td>
         </tr>
         <tr>
             <td>sqrt</td>
-            <td>√(16)</td>
+            <td>16/sqrt/0</td>
         </tr>
         <tr>
             <td>log</td>
-            <td>log(100)</td>
+            <td>10/log/100</td>
         </tr>
         <tr>
             <td>sin</td>
-            <td>sin(45)</td>
+            <td>6/sin/</td>
         </tr>
         <tr>
             <td>cos</td>
-            <td>cos(60)</td>
+            <td>60/cos/</td>
         </tr>
         <tr>
             <td>tan</td>
-            <td>tan(30)</td>
+            <td>30/tan/</td>
         </tr>
     </table>
 </body>
-  <ul>
-    <li><a href="/operators">Operators</a></li>
-  </ul>
   `);
 });
 
@@ -106,28 +103,6 @@ app.get('/operators', (req, res) => {
     tan: 'tan(30)'
   };
 
-  // Generate the HTML for the operators and examples.
-  const operatorHTML = Object.entries(operatorExamples).map(([operator, example]) => `
-    <tr>
-      <td>${operator}</td>
-      <td>${example}</td>
-    </tr>
-  `).join('');
-
-  // Send the operators and examples to the client as HTML.
-  res.send(`
-  <h1>Operators</h1>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Operator</th>
-        <th>Example</th>
-      </tr>
-    </thead>
-    <tbody>
-    <td>${operationExamples}</td>
-    </tbody>
-  </table>`);
 });
 
 
